@@ -1,11 +1,14 @@
 # environment file
 #.env
-
+#.iotfuns.env
 # wordpress files
 wordpress
 
 # mysql files
 dbdata
+
+# cert
+ssl
 
 # logging output
 logs
