@@ -1,6 +1,6 @@
 # environment file
-#.env
-#.iotfuns.env
+.env
+.iotfuns.env
 # wordpress files
 wordpress
 
