@@ -3,16 +3,16 @@
 .iotfuns.env
 .fleet
 # wordpress files
-vol/wordpress
+# vol/wordpress
 
 # mysql files
-vol/dbdata
+# vol/dbdata
 
 # cert
 vol/ssl
 
 # logging output
-vol/logs
+# vol/logs
 
 # macOS and IDE
 .DS_Store
