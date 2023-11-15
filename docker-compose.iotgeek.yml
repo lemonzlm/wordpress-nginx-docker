@@ -6,7 +6,7 @@ services:
     image: wordpress:6-fpm
     container_name: wp-wordpress
     env_file:
-      - .env
+      - .iotgeek.env
     restart: unless-stopped
     networks:
       - wordpress
@@ -27,7 +27,7 @@ services:
     image: mariadb
     container_name: wp-database
     env_file:
-      - .env
+      - .iotgeek.env
     restart: unless-stopped
     networks:
       - wordpress
@@ -46,33 +46,32 @@ services:
     image: nginx:1
     container_name: wp-nginx
     env_file:
-      - .env
+      - .iotgeek.env
     restart: unless-stopped
     networks:
       - wordpress
     depends_on:
       - wordpress
     ports:
-      - "45.76.172.81:80:80"    # http
-      - "45.76.172.81:443:443"   # https
+      - "45.76.172.81:80:80" # http
+      - "45.76.172.81:443:443" # https
     volumes:
       - ${WORDPRESS_LOCAL_HOME}:/var/www/html
       - ${NGINX_CONF}:/etc/nginx/conf.d/default.conf
       - ${NGINX_SSL_CERTS}:/etc/ssl:ro
       - ${NGINX_LOGS}:/var/log/nginx
-
   # adminer - bring up only as needed - bypasses nginx
-#  adminer:
-#    # default port 8080
-#    image: adminer:4
-#    container_name: wp-adminer
-#    restart: unless-stopped
-#    networks:
-#      - wordpress
-#    depends_on:
-#      - database
-#    ports:
-#      - "9000:8080"
+  #  adminer:
+  #    # default port 8080
+  #    image: adminer:4
+  #    container_name: wp-adminer
+  #    restart: unless-stopped
+  #    networks:
+  #      - wordpress
+  #    depends_on:
+  #      - database
+  #    ports:
+  #      - "9000:8080"
 
 networks:
   wordpress:
