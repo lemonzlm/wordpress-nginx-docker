@@ -9,7 +9,7 @@ services:
       - .anbernic.deals.env
     restart: unless-stopped
     networks:
-      - wp-ngx-anbernic
+      - wordpress
     depends_on:
       - database
     volumes:
@@ -30,7 +30,7 @@ services:
       - .anbernic.deals.env
     restart: unless-stopped
     networks:
-      - wp-ngx-anbernic
+      - wordpress
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
@@ -49,7 +49,7 @@ services:
       - .anbernic.deals.env
     restart: unless-stopped
     networks:
-      - wp-ngx-anbernic
+      - wordpress
     depends_on:
       - wordpress
     ports:
