@@ -3,7 +3,7 @@ services:
 
   wordpress:
     # default port 9000 (FastCGI)
-    image: wordpress:6-fpm
+    image: wordpress:6.4.1-fpm
     container_name: anbernic-wp-fpm
     env_file:
       - .anbernic.deals.env
@@ -43,7 +43,7 @@ services:
 
   nginx:
     # default ports 80, 443 - expose mapping as needed to host
-    image: nginx:1
+    image: nginx
     container_name: anbernic-wp-ngx
     env_file:
       - .anbernic.deals.env
