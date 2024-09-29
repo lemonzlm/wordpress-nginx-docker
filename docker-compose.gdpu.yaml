@@ -35,7 +35,7 @@ services:
     image: mysql:8.0.39-debian
     container_name: gdpu-wp-db
     env_file:
-      - .gdpu.deals.env
+      - .gdpu.env
     restart: unless-stopped
     networks:
       - wordpress
@@ -54,7 +54,7 @@ services:
     image: nginx:1.2.7
     container_name: gdpu-wp-ngx
     env_file:
-      - .gdpu.deals.env
+      - .gdpu.env
     restart: unless-stopped
     networks:
       - wordpress
