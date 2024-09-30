@@ -2,7 +2,7 @@ version: "3.9"
 services:
   wordpress:
     # default port 9000 (FastCGI)
-    image: wordpress:php:8.3-fpm
+    image: wordpress:php8.3-fpm
     container_name: gdpu-wp-fpm
     env_file:
       - .gdpu.env
@@ -31,7 +31,7 @@ services:
       - WORDPRESS_NONCE_SALT=${WORDPRESS_NONCE_SALT}
 
   database:
-    # default port 3306
+    # default port 3306 
     image: mysql:8.0.39-debian
     container_name: gdpu-wp-db
     env_file:
